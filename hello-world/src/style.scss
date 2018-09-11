@@ -4,6 +4,7 @@
   font-family: inherit;
   line-height: inherit;
   color: inherit;
+  cursor: url("./cursor.png"), auto !important;
 }
 
 html {
@@ -30,6 +31,7 @@ main {
 
 img {
   animation: wiggle 0.4s infinite alternate steps(2);
+  max-width: 80vw;
 }
 
 @keyframes wiggle {
@@ -45,8 +47,14 @@ img {
 }
 
 h1 {
-  font-size: 4rem;
   margin-top: 2rem;
+  text-align: center;
+}
+
+@media screen and (min-width: 580px) {
+  h1 {
+    font-size: 4rem;
+  }
 }
 
 h1 span {
@@ -63,6 +71,10 @@ h1 span {
 
   10% {
     transform: translateY(0) scaleY(0.8);
+  }
+
+  20% {
+    color: yellow;
   }
 
   40% {
