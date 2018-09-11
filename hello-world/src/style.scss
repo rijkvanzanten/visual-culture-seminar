@@ -14,6 +14,7 @@ html {
 
 html, body {
   height: 100%;
+  overflow: hidden;
 }
 
 body {
@@ -21,17 +22,30 @@ body {
   position: relative;
 }
 
-main {
-  margin-top: 10vh;
+.sparklez {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: url("https://media.giphy.com/media/3o7aDcEbGEsFAwSL0Q/giphy.gif");
+  background-repeat: repeat-x;
+  height: 50px;
+  background-size: 50px 50px;
+  display: block;
+}
+
+.face {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 100%;
+  height: 90%;
 }
 
-img {
+#rijk {
   animation: wiggle 0.4s infinite alternate steps(2);
-  max-width: 80vw;
+  width: 40vw;
 }
 
 @keyframes wiggle {
@@ -49,12 +63,7 @@ img {
 h1 {
   margin-top: 2rem;
   text-align: center;
-}
-
-@media screen and (min-width: 580px) {
-  h1 {
-    font-size: 4rem;
-  }
+  font-size: 10vw;
 }
 
 h1 span {
@@ -98,4 +107,51 @@ h1 span {
   span:nth-child(#{$i}) {
     animation-delay: 50ms * $i;
   }
+}
+
+.gif {
+  z-index: -1;
+
+  &.laser {
+    position: absolute;
+    right: -10vw;
+    top: 5vh;
+    transform: rotate(15deg);
+    width: 30vw;
+  }
+
+  &.nyan {
+    position: absolute;
+    right: 10vw;
+    top: 45vh;
+    transform: rotate(-5deg);
+    width: 20vw;
+  }
+
+  &.inspace {
+    position: absolute;
+    left: 10vw;
+    top: 20vh;
+    transform: rotate(-5deg);
+    width: 15vw;
+  }
+
+  &.spanish {
+    position: absolute;
+    left: 0;
+    top: 85vh;
+    transform: rotate(-5deg);
+    width: 20vh;
+  }
+
+  &.clapping {
+    position: absolute;
+    right: 0;
+    top: 75vh;
+    height: 25vh;
+  }
+}
+
+marquee:first-of-type {
+  transform: rotate(-25deg);
 }
